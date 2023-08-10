@@ -11,8 +11,6 @@ local ensure_packer = function()
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
--- autocommand that reloads neovim and installs/updates/removes plugins
--- when file is saved
 vim.cmd([[ 
 augroup packer_user_config
 autocmd!
@@ -20,13 +18,11 @@ autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
 augroup end
 ]])
 
--- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
     return
 end
 
--- add list of plugins to install
 return packer.startup(function(use)
     -- packer can manage itself
     use("wbthomason/packer.nvim")
@@ -47,7 +43,7 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-web-devicons")
 
     use("nvim-lualine/lualine.nvim")
-    
+
     use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
 
@@ -92,12 +88,12 @@ return packer.startup(function(use)
         end,
     })
 
-    -- auto closing
     use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
     use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-    -- git integration
     use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+    use "akinsho/toggleterm.nvim"
 
     if packer_bootstrap then
         require("packer").sync()
