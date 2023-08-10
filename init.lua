@@ -13,4 +13,4 @@ require('utkuuci.plugins.lsp.lspconfig')
 require('utkuuci.plugins.autopair')
 require('utkuuci.plugins.treesitter')
 require('utkuuci.plugins.gitsign')
-
+require('utkuuci.plugins.toggleterm')
