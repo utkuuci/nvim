@@ -32,3 +32,7 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>")
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") 
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") 
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") 
+
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
