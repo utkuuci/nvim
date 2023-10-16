@@ -36,3 +36,6 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Python venv
+keymap.set("n", "<leader>vs", "<cmd>:VenvSelect<cr>")

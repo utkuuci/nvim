@@ -94,7 +94,17 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
     use "akinsho/toggleterm.nvim"
-
+    use "mfussenegger/nvim-dap-python"
+    -- you should install fd (brew install fd)
+    use({
+        "linux-cultist/venv-selector.nvim",
+        config = function()
+            require('venv-selector').setup({
+                name = "venv",
+                auto_refresh = false
+            })
+        end,
+    })
     if packer_bootstrap then
         require("packer").sync()
     end
