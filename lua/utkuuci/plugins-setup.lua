@@ -95,7 +95,8 @@ return packer.startup(function(use)
 
     use "akinsho/toggleterm.nvim"
     use "mfussenegger/nvim-dap-python"
-    -- you should install fd (brew install fd)
+    -- you should install fd for mac(brew install fd)
+    -- you should install fd for windows (scoop install fd)
     use({
         "linux-cultist/venv-selector.nvim",
         config = function()
